@@ -11,7 +11,7 @@ var db *gorm.DB
 var err error
 
 func InitDb() {
-	db, err = gorm.Open("mysql", "ginVue:admin123@tcp(ginblog-mysql:3306)/ginblog?charset=utf8mb4&parseTime=True&loc=Local",
+	db, err = gorm.Open("mysql", "root:12345678@tcp(localhost:3306)/ginblog?charset=utf8mb4&parseTime=True&loc=Local",
 		//utils.DbPassword,
 		//utils.DbHost,
 		//utils.DbPort,

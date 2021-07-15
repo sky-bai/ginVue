@@ -73,7 +73,7 @@ func GetUserInfo(c *gin.Context) {
 	})
 }
 
-// 获取用户列表
+// 获取用户列表   params 查询参数
 func GetUsers(c *gin.Context) {
 	// 1.先从请求的url获取到需要查询到值
 	pageSize, _ := strconv.Atoi(c.Query("pagesize"))
@@ -111,7 +111,7 @@ func EditUser(c *gin.Context) {
 	_ = c.ShouldBindJSON(&data) // 将json数据绑定到后端结构体上
 
 	// 3.如果新设置的用户名不存在就根据id修改用户名
-	code = model.CheckUpUser(id,data.Username)
+	code = model.CheckUpUser(id, data.Username)
 	if code == errmsg.SUCCESS {
 		model.EddUser(id, &data)
 	}
